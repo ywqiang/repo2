@@ -17,6 +17,7 @@ public class OJDBCTest {
         //   {call <procedure-name>[(<arg1>,<arg2>, ...)]}
         CallableStatement cstat = conn.prepareCall("{call p1(?,?)}");
         cstat.setObject(1,7788);
+        //找不到这个枚举吗 什么情况
         cstat.registerOutParameter(2, OracleTypes.NUMBER);
         cstat.execute();
         Object sal = cstat.getObject(2);
